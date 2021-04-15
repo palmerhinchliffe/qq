@@ -2,9 +2,9 @@ import { Command } from '@colyseus/command'
 import { RoomState } from '../schema/RoomState'
 import * as openTrivia from '../../services/OpenTrivia'
 
-/** When category is set
-*
-**/
+/**
+ * When category is set
+ */
 export class OnSetCategory extends Command<RoomState, { sessionId: string, categoryId: number }> {
   validate({ sessionId } = this.payload) {
     return sessionId === this.state.leaderId
